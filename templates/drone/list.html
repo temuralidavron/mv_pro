@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Drone
+{% endblock %}
+
+{% block style %}
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+    <div class="container p-2">
+        <a href="{% url "create-drone" %}" class="btn btn-success mb-2">Add</a>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">
+                    Name
+
+                </th>
+                <th scope="col">Operation</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+                {% for drone in drones %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td><a href="{% url 'drone-detail' drone.pk %}">{{ drone.name }}</a></td>
+                        <td>
+                            <a href="{% url 'drone-update' drone.pk %}" class="btn btn-info">Update</a>
+                            <a href="{% url 'drone-delete' drone.pk %}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

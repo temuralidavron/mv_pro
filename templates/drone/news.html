@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Drone
+{% endblock %}
+
+{% block style %}
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+
+<h1>{{news.title}}</h1>
+<p>{{news.content}}</p>
+<p>{{news.count}}</p>
+<hr>
+
+{% endblock %}

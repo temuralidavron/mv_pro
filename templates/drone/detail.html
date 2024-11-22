@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container p-2">
+        <p>Drone name: {{ drone.name }}</p>
+        <p>Drone id:{{drone.pk}}</p>
+        <p>Drone brand:{{ drone.brand}}</p>
+    </div>
+{% endblock %}
